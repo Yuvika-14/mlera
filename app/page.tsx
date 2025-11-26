@@ -1,65 +1,92 @@
-import Image from "next/image";
+"use client";
+
+import Navbar from "../components/Navbar";
+import InfoCard from "../components/InfoCard";
+import FormulaBlock from "../components/FormulaBlock";
+import DataTable from "../components/DataTable";
+import Footer from "../components/Footer";
 
 export default function Home() {
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+
+    return (
+<main className="min-h-screen p-6">
+<Navbar />
+
+
+<section className="max-w-3xl mx-auto mt-10 space-y-8">
+<InfoCard id="section1" title="1. What is Linear Regression?">
+<p>
+Linear Regression is a supervised machine learning algorithm that models the
+relationship between input X and output Y.
+</p>
+</InfoCard>
+
+
+<InfoCard id="section2" title="2. Mathematical Formula">
+<FormulaBlock formula={"Y = \\beta_0 + \\beta_1 X + \\epsilon"} />
+</InfoCard>
+
+
+<InfoCard id="section3" title="3. Example Dataset">
+<DataTable />
+</InfoCard>
+
+
+<InfoCard id="section4" title="4. What is β₀ (Intercept)?">
+<p>
+The intercept (β₀) represents the predicted value of Y when X = 0.
+</p>
+</InfoCard>
+
+
+<InfoCard id="section5" title="5. What is β₁ (Slope)?">
+<p>
+The slope (β₁) indicates how much Y changes for every one‑unit increase in X.
+</p>
+</InfoCard>
+
+
+<InfoCard id="section6" title="6. Error Term (ε)">
+<p>
+The error term captures the difference between the predicted values and
+the actual values.
+</p>
+</InfoCard>
+
+
+<InfoCard id="section7" title="7. Cost Function (MSE)">
+<FormulaBlock formula={"MSE = \\frac{1}{n} \\sum (Y_i - \\hat{Y_i})^2"} />
+</InfoCard>
+
+
+<InfoCard id="section8" title="8. Gradient Descent Optimization">
+<p>
+Gradient Descent is used to minimize the cost function by updating parameters
+β₀ and β₁ iteratively.
+</p>
+</InfoCard>
+
+
+<InfoCard id="section9" title="9. Assumptions of Linear Regression">
+<ul className="list-disc list-inside space-y-1">
+<li>Linearity</li>
+<li>Independence</li>
+<li>Homoscedasticity</li>
+<li>Normality of errors</li>
+</ul>
+</InfoCard>
+
+
+<InfoCard id="section10" title="10. Real‑World Example">
+<p>
+Linear Regression is often used to predict house prices, sales forecasting,
+and understanding relationships between variables.
+</p>
+</InfoCard>
+</section>
+
+
+<Footer />
+</main>
+);
 }
